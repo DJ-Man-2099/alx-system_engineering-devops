@@ -4,3 +4,4 @@
 ## 3.2-bring_me_home: this changes the current directory to Home directory
 ## 3.3-listfiles: this changes the detailed contents list of the current directory
 ## 3.4-listmorefiles: this changes the detailed contents list with all of the hidden files of the current directory
+## 3.5-listfilesdigitonly: this changes the detailed contents list with all of the hidden files of the current directory with numeric UID
