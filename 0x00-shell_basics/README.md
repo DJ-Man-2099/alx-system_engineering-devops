@@ -8,3 +8,4 @@
 ## 7.6-firstdirectory: this creates a directory named my_first_directory in the /tmp/ directory
 ## 8.7-movethatfile: this Moves the file betty from /tmp/ to /tmp/my_first_directory
 ## 9.8-firstdelete: this deletes the file betty in /tmp/my_first_directory
+## 10.9-firstdirdeletion: this deletes the directory /tmp/my_first_directory
