@@ -6,3 +6,4 @@
 ## 3.4-listmorefiles: this changes the detailed contents list with all of the hidden files of the current directory
 ## 3.5-listfilesdigitonly: this changes the detailed contents list with all of the hidden files of the current directory with numeric UID
 ## 3.6-firstdirectory: this creates a directory named my_first_directory in the /tmp/ directory
+## 3./tmp/my_first_directory: this Moves the file betty from /tmp/ to /tmp/my_first_directory
