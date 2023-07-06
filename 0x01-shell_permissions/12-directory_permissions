@@ -1,3 +1,2 @@
 #!/bin/bash
-mkdir --mode=751 my_d:wq
-
+mkdir --mode=751 my_dir
