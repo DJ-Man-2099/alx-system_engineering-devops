@@ -2,6 +2,7 @@ SyslogFacility AUTHPRIV
 AuthorizedKeysFile  .ssh/authorized_keys
 UsePrivilegeSeparation sandbox # Default for new installations.
 AcceptEnv LANG LC_*
+sandlkasmd
 Subsystem   sftp    /usr/libexec/sftp-server
 ade6135
 5434.43sa5d43as
