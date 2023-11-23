@@ -2,7 +2,8 @@
 # This Script is to show how for loops work
 
 
-for (( i=0; i<10; i++ ))
+for file in *;
 do
-	echo "Best School"
+	part_after_dash=${file##*-}
+	echo "$part_after_dash"
 done
