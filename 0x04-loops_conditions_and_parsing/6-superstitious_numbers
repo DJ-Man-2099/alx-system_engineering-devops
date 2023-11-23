@@ -3,16 +3,23 @@
 
 i=1
 
-while [ $i -le 10 ]
+while [ $i -le 20 ]
 do
-	if [ $i -eq 4 ]; then
-		
-	echo "bad luck"
-	elif [ $i -eq 8 ]; then
-	echo "good luck"
-	else
-	echo "Best School"
-		
-	fi
-	((i++))  # ← put the command that you want to run on each line here
+	echo "$i"
+	case $i in
+		   4 )
+	echo "bad luck from China"
+	;;
+		 9) # This catches all cases that weren't previously listed. That's why it has the wildcard "*" operator.
+	echo "bad luck from Japan"
+		    # ← put your command here
+		;;
+		 17) # This catches all cases that weren't previously listed. That's why it has the wildcard "*" operator.
+	echo "bad luck from Italy"
+		    # ← put your command here
+		;;	
+	
+	esac
+	
+	((i++))  # ← put the command that you want to run on each line here # ← put the command that you want to run on each line here
 done
