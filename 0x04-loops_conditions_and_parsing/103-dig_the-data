@@ -3,7 +3,5 @@
 
 awk '
 {arr[$1" "$9]++}
-END{
-    for (a in arr) print arr[a], a
-}
+{print arr[$1" "$9],$1,$9}
 ' "apache-access.log" | sort -rnk1
