@@ -3,7 +3,7 @@
 
 
 filename="/etc/passwd"
-while IFS=':' read -r USER_NAME USER_PASS USER_ID USER_HOME ignored 
+while read line
 do
-echo "$USER_NAME:$USER_ID:$USER_HOME"
+cut -d ":" -f1,3,6
 done < $filename
