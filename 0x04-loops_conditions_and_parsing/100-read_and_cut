@@ -2,7 +2,8 @@
 # This Script is to show how for loops work
 
 
-for (( i=0; i<10; i++ ))
+filename="/etc/passwd"
+while IFS=':' read -r USER_NAME USER_PASS USER_ID USER_HOME ignored 
 do
-	echo "Best School"
-done
+echo "$USER_NAME:$USER_ID:$USER_HOME"
+done < $filename
