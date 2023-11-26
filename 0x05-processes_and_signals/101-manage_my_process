@@ -6,7 +6,9 @@ if [ "$1" = "start" ] ; then
     echo "$!" > "/var/run/my_process.pid"
     echo "manage_my_process started"
 elif [ "$1" = "stop" ] ; then
+    PID=$(<"/var/run/my_process.pid")
     rm "/var/run/my_process.pid"
+    kill "$PID"
     echo "manage_my_process stopped"
 elif [ "$1" = "restart" ] ; then
     rm "/var/run/my_process.pid"
