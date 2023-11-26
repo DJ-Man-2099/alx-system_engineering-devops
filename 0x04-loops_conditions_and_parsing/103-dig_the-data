@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # This Script is to show how for loops work
 
-awk '
-{arr[$1" "$9]++}
-{print "    ",arr[$1" "$9],$1,$9}
-' "apache-access.log" | sort -rnk1
+awk '{print $1" "$9}' "apache-access.log" | sort | uniq -c | awk '{print $1" "$2" "$3}' | sort -rn
