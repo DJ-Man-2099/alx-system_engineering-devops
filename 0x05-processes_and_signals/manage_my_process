@@ -2,6 +2,6 @@
 # This Script explains PID
 while true
 do
-	echo "To infinity and beyond"
+	echo "I am alive!" > "/tmp/my_process"
 	sleep 2
 done
