@@ -2,4 +2,5 @@ Host "18.207.142.187"
     HostName "18.207.142.187"
     IdentityFile "~/.ssh/school"
     BatchMode yes
+    IdentitiesOnly yes
     PasswordAuthentication no
