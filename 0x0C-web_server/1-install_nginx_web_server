@@ -7,15 +7,7 @@ echo "Hello World!
 # starting nginx service
 sudo service nginx start
 # allowing nginx on firewall
-sudo ufw allow 'Nginx HTTP'
-echo 'server {
-    listen 80;
-
-    location / {
-        root /home/ubuntu;
-        index hello.html;
-    }
-}' > /etc/nginx/sites-available/default
+echo 'Hello World!' > /var/www/html/index.html
 
 sudo nginx -t
 
