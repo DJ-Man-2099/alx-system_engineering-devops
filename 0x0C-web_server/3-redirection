@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Install nginx web server
 echo 'server {
-    listen 80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
     location / {
         root /home/ubuntu;

@@ -2,8 +2,6 @@
 # Install nginx web server
 apt-get update
 apt-get install -y nginx
-echo "Hello World!
-" > /home/ubuntu/hello.html
 # starting nginx service
 sudo service nginx start
 # allowing nginx on firewall
