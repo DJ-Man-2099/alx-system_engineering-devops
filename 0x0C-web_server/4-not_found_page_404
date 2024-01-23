@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server
 echo "Hello World!" > /home/ubuntu/hello.html
-echo "Ceci n'est pas une page" > /home/ubuntu/hello.html
+echo "Ceci n'est pas une page" > /home/ubuntu/404.html
 echo 'server {
     listen 80;
 
