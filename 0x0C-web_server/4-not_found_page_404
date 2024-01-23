@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server
 echo "Hello World!" > /home/ubuntu/hello.html
-echo "Ceci n'est pas une page" > /home/ubuntu/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 echo 'server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -11,10 +11,6 @@ echo 'server {
     }
     
     error_page 404 /404.html;
-    location = /404.html {
-        root /home/ubuntu;
-    }
-
 }' > /etc/nginx/sites-available/default
 
 sudo nginx -t
