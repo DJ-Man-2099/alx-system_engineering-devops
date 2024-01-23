@@ -1,2 +1,17 @@
 #!/usr/bin/env bash
-# transfers a file from our client to a server
+# Install nginx web server
+apt-get update
+apt-get install -y nginx
+echo "Hello World!" > /home/ubuntu/hello.html
+echo 'server {
+    listen 80;
+
+    location / {
+        root /home/ubuntu;
+        index hello.html;
+    }
+}' > /etc/nginx/sites-available/default
+
+sudo nginx -t
+
+sudo service nginx restart
