@@ -2,7 +2,7 @@
 # Install nginx web server
 apt-get update
 apt-get install -y nginx
-echo "Hello World!" > /home/ubuntu/hello.html
+echo "Hello World!\n" > /home/ubuntu/hello.html
 echo 'server {
     listen 80;
 
