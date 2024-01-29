@@ -3,8 +3,10 @@
 apt-get install -y --no-install-recommends software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.9
 apt-get update
-apt-get install -y -o Dpkg::Options::="--force-confdef" haproxy=2.9.\*
-echo 'ENABLE=1' >>  /etc/default/haproxy
+apt-get install -y haproxy=2.9.\*
+# Enable HAProxy to be managed via an init script
+echo 'ENABLED=1' | sudo tee /etc/default/haproxy
+# Backup the original configuration file
 mv /etc/haproxy/haproxy.cfg{,.original}
 echo '
 global
@@ -27,13 +29,6 @@ defaults
     timeout connect 5000
     timeout client  30000
     timeout server  30000
-    errorfile 400 /etc/haproxy/errors/400.http
-    errorfile 403 /etc/haproxy/errors/403.http
-    errorfile 408 /etc/haproxy/errors/408.http
-    errorfile 500 /etc/haproxy/errors/500.http
-    errorfile 502 /etc/haproxy/errors/502.http
-    errorfile 503 /etc/haproxy/errors/503.http
-    errorfile 504 /etc/haproxy/errors/504.http
 
 frontend http_front
    timeout client 30000
@@ -45,7 +40,7 @@ backend http_back
    balance roundrobin
    server web-01 18.207.142.187:80 check
    server web-02 54.152.104.50:80 check
-' >> /etc/haproxy/haproxy.cfg
+' | sudo tee /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy to apply the changes
 sudo service haproxy restart
