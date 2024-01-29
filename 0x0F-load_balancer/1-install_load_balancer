@@ -2,10 +2,10 @@
 # Install nginx web server
 apt-get update
 apt-get install -y --no-install-recommends software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.9
+add-apt-repository -y ppa:vbernat/haproxy-2.9
 # Preconfigure selections for HAProxy
 export DEBIAN_FRONTEND=noninteractive
-apt-get install -y haproxy=2.9.\*
+apt-get install -y -o Dpkg::Options::="--force-confdef" haproxy=2.9.\*
 echo 'ENABLED=1' | sudo tee /etc/default/haproxy
 echo '
 global
