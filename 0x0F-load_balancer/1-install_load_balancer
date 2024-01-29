@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server
 apt-get update
-apt-get install --no-install-recommends software-properties-common
+apt-get install -y --no-install-recommends software-properties-common
 add-apt-repository ppa:vbernat/haproxy-2.9
 # Preconfigure selections for HAProxy
 export DEBIAN_FRONTEND=noninteractive
