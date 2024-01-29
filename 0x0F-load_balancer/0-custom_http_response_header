@@ -2,6 +2,7 @@
 # Install nginx web server
 apt-get update
 apt-get install -y nginx
+export hostname=$(hostname)
 echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -9,7 +10,7 @@ echo "server {
     server_name _;
 
     location /{
-      add_header X-Served-By $hostname;
+      add_header X-Served-By \"$hostname\";
     }
 }" > /etc/nginx/sites-available/default
 
