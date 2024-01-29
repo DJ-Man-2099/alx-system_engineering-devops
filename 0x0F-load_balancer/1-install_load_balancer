@@ -3,6 +3,7 @@
 apt-get update
 # Preconfigure selections for HAProxy
 echo haproxy haproxy/default_accept boolean true | sudo debconf-set-selections
+export DEBIAN_FRONTEND=noninteractive
 apt-get install -y haproxy
 echo 'ENABLED=1' | sudo tee /etc/default/haproxy
 echo '
