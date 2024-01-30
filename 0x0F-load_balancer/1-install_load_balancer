@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Install nginx web server
 apt-get install -y --no-install-recommends software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.9
+add-apt-repository -y ppa:vbernat/haproxy-2.8
 apt-get update
-apt-get install -o DPkg::Options::="--force-confnew" haproxy=2.9.\*
+apt-get install -o DPkg::Options::="--force-confnew" haproxy=2.8.\*
 # Enable HAProxy to be managed via an init script
 echo 'ENABLED=1' | sudo tee /etc/default/haproxy
 # Backup the original configuration file
