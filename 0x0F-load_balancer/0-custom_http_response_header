@@ -5,7 +5,8 @@ apt-get install -y nginx
 echo "Hello World!" > /home/ubuntu/hello.html
 echo "Ceci n'est pas une page
 " > /var/www/html/404.html
-export hostname=$(hostname)
+hostname=$(hostname)
+export hostname
 echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
