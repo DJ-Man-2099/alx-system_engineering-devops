@@ -6,7 +6,6 @@ echo "Hello World!" > /home/ubuntu/hello.html
 echo "Ceci n'est pas une page
 " > /var/www/html/404.html
 hostname=$(hostname)
-export hostname
 echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
