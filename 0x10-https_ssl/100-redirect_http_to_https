@@ -22,8 +22,8 @@ defaults
 frontend http_front
    timeout client 30000
    bind *:80
-   stats uri /haproxy?stats
-   default_backend http_back
+   mode http
+   redirect scheme https code 301 if !{ ssl_fc }
 
 frontend certbot
    timeout client 30000
