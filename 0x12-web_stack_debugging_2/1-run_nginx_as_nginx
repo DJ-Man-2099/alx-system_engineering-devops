@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-# run the whoami command under the user passed as an argument
-sudo su -l "$1" -c whoami
+# Fix this container so that Nginx is running as the nginx user.
+sudo sed -i '1a\
+user nginx;' /etc/nginx/nginx.conf
+echo "
+server {
+	listen 8080;
+}
+" > /etc/nginx/conf.d/new_conf.conf
+sudo service nginx restart
