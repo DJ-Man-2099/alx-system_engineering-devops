@@ -5,6 +5,11 @@ user nginx;' /etc/nginx/nginx.conf
 echo "
 server {
 	listen 8080;
+
+	location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
 }
 " > /etc/nginx/conf.d/new_conf.conf
 sudo service nginx restart
