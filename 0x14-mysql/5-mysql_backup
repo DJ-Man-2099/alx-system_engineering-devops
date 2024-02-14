@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Backup MySQL databases
-MYSQL_PWD="$1" mysqldump -u root --all-databases > backup.sql
+mysqldump -u root --all-databases --password="$1" > backup.sql
 tar -cvzf "$(date +%d-%m-%Y).tar.gz" backup.sql
