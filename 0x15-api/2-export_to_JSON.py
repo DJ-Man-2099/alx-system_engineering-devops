@@ -33,7 +33,7 @@ def get_employee(id):
              "username": username, }
         )
     with open(str.format("{}.json", id), 'w') as json_file:
-        json_file.write(json.dump(dict))
+        json.dump(dict, json_file)
 
 
 if __name__ == "__main__":
