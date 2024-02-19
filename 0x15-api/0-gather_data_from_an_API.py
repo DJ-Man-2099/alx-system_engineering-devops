@@ -4,8 +4,8 @@ a Python script that, using this REST API,
 for a given employee ID,
 returns information about his/her TODO list progress
 """
-import sys
 import requests
+import sys
 API_URL = "https://jsonplaceholder.typicode.com/"
 
 
