@@ -35,7 +35,7 @@ def get_all_employees():
                  "completed": todo.get("completed"),
                  "username": username, }
             )
-    with open(str.format("{}.json", id), 'w') as json_file:
+    with open("todo_all_employees.json", 'w') as json_file:
         json.dump(dict, json_file)
 
 
