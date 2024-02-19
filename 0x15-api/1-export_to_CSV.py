@@ -24,7 +24,7 @@ def get_employee(id):
         "users/{}/todos", id)
     todos = requests.get(API_URL+todos_url).json()
     rows = []
-    username = user.get("username"),
+    username = user.get("username")[0],
     for todo in todos:
         rows.append([
             id,
