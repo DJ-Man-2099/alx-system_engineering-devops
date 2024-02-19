@@ -40,5 +40,4 @@ def get_all_employees():
 
 
 if __name__ == "__main__":
-    id = int(sys.argv[1])
-    get_all_employees(id)
+    get_all_employees()
