@@ -4,6 +4,7 @@ a Python script that, using this REST API,
 for a given employee ID,
 returns information about his/her TODO list progress
 """
+import csv
 import requests
 import sys
 API_URL = "https://jsonplaceholder.typicode.com/"
@@ -22,14 +23,19 @@ def get_employee(id):
     todos_url = str.format(
         "users/{}/todos", id)
     todos = requests.get(API_URL+todos_url).json()
-    completed_todos = list(filter(lambda x: x.get("completed"), todos))
-    first_line = str.format("Employee {} is done" +
-                            " with tasks({}/" +
-                            "{}):", user.get("name"),
-                            len(completed_todos), len(todos))
-    print(first_line)
-    for todo in completed_todos:
-        print(str.format("\t {}", todo.get("title")))
+    rows = []
+    username = user.get("username"),
+    for todo in todos:
+        rows.append([
+            id,
+            username,
+            todo.get("completed"),
+            todo.get("title")
+        ])
+    with open(str.format("{}.csv", id), 'w') as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for row in rows:
+            writer.writerow(row)
 
 
 if __name__ == "__main__":
