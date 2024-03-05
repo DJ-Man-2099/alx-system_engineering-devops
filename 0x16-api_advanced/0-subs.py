@@ -16,6 +16,7 @@ def number_of_subscribers(subreddit):
     data = requests.get(BASE + str.format("{}/about.json",
                         subreddit), headers=headers,
                         allow_redirects=False)
+    print(data.text)
     if data.status_code == 404:
         return 0
     return data.json().get('data').get('subscribers')
