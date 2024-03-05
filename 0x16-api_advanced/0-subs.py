@@ -15,7 +15,7 @@ def number_of_subscribers(subreddit):
     headers = {'User-Agent': 'my-app/0.0.1'}
     data = requests.get(BASE + str.format("{}/about.json",
                         subreddit), headers=headers,
-                        allow_redirects=False).json()
-    if 'error' in data:
+                        allow_redirects=False)
+    if data.status_code == 404:
         return 0
-    return data['data']['subscribers']
+    return data.json().get('data').get('subscribers')
