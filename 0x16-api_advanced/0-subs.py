@@ -12,7 +12,7 @@ BASE = 'https://www.reddit.com/r/'
 
 def number_of_subscribers(subreddit):
     """function"""
-    headers = {'User-Agent': 'my-app/0.0.1'}
+    headers = {'User-Agent': 'my-app/0.0.1/220942'}
     data = requests.get(BASE + str.format("{}/about.json",
                         subreddit), headers=headers,
                         allow_redirects=False)
