@@ -28,4 +28,4 @@ def top_ten(subreddit):
         return
     posts = data.json().get('data').get('children')
     for post in posts:
-        print(post.get('data').get('title'))
+        print(post.get('data').get('title').encode('utf-8'))
