@@ -16,7 +16,8 @@ def top_ten(subreddit):
     """function"""
     headers = {'User-Agent': 'my-app/0.0.1/220942',
      'Authorization':
-        "Basic " + base64.b64encode((quote(CLIENT_ID) + ":").encode()).decode(),}
+        "Basic " +
+        base64.b64encode((quote(CLIENT_ID) + ":").encode()).decode(),}
     data = requests.get(BASE + str.format("{}/hot.json?limit=10",
                         subreddit), headers=headers,
                         allow_redirects=False)
