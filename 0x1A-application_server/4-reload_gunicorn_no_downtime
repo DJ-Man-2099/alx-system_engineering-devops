@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# reloads gunicorn in a graceful way
+
+cat /var/run/gunicorn.pid | xargs kill -HUP
