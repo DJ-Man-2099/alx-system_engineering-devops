@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # reloads gunicorn in a graceful way
 
-xargs kill -HUP < /var/run/gunicorn.pid
+sudo systemctl show -p MainPID --value gunicorn | xargs kill -HUP
