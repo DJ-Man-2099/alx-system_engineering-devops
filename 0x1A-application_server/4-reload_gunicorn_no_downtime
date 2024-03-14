@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # reloads gunicorn in a graceful way
 
-echo $(systemctl show -p MainPID --value gunicorn) | xargs kill -HUP
+systemctl show -p MainPID --value gunicorn | xargs kill -HUP
